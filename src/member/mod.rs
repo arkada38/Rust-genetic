@@ -10,12 +10,12 @@ pub struct Member {
 }
 
 fn mutate_string(s: &str) -> String {
-    //индекс мутируемого символа
+    //Index of a mutable character
     let r_number = rand::thread_rng().gen_range(0, s.len());
 
-    //индекс нового символа
+    //New character index
     let r_index = rand::thread_rng().gen_range(0, SYMBOLS.len());
-    //новый символ
+    //New character
     let new_char = SYMBOLS.get(r_index).unwrap();
 
     let mut chars = String::with_capacity(s.len());
@@ -49,9 +49,9 @@ impl Member {
         }
     }
 
-    pub fn get_child(&self, mother: &Member, expected: &str) -> Member {
-        if self.s.len() != mother.s.len() {
-            panic!("{} != {}", self.s, mother.s);
+    pub fn get_child(&self, partner: &Member, expected: &str) -> Member {
+        if self.s.len() != partner.s.len() {
+            panic!("{} != {}", self.s, partner.s);
         }
 
         let mut child_s = String::with_capacity(self.s.len());
@@ -59,7 +59,7 @@ impl Member {
         for i in 0..self.s.len() {
             match rand::thread_rng().gen_range(0, 2) {
                 0 => child_s.push(self.s.chars().nth(i).unwrap()),
-                _ => child_s.push(mother.s.chars().nth(i).unwrap())
+                _ => child_s.push(partner.s.chars().nth(i).unwrap())
             }
         }
 
@@ -79,18 +79,12 @@ fn mutate_string_tests_eq_len0() {
 
 #[test]
 fn mutate_string_tests_eq_len1() {
-    assert_eq!(15, mutate_string("hellohellohello").len())
+    assert_eq!(15, mutate_string("hello five four").len())
 }
 
 #[test]
 fn get_score_tests() {
-    let mut text = String::new();
-
-    for c in SYMBOLS.iter() {
-        text.push(*c);
-    }
-    
-    assert_eq!(SYMBOLS.len() as u32, get_score(&text, "world"))
+    assert_eq!(1, get_score("dare", "five"))
 }
 
 #[test]

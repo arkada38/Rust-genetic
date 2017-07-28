@@ -8,18 +8,16 @@ pub const SYMBOLS: &'static [char] = &[
     ' ', ',', '.', '!', '?', '-', '*', '/', '\\', '|', '=', ';', ':', '"', '\'', '[', ']', '{', '}', '@', '#', '%', '(', ')',
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-    //'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я',
-    //'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 ];
 
 pub fn init_genetic(expected: String) {
-    println!("Ожидаемая строка: {}:{}", expected, expected.len());
+    println!("Expected string: {} with length {}", expected, expected.len());
 
     let population = get_population(&expected);
 
     let steps = start_genetic(expected, population);
-    println!("Задача решена за {} поколений", steps);
+    println!("The problem is solved in {} generations", steps);
 }
 
 fn get_population(expected: &str) -> Vec<member::Member> {
@@ -60,7 +58,8 @@ fn start_genetic(expected: String, population: Vec<member::Member>) -> usize {
     loop {
         pop.sort_by(|a, b| b.score.cmp(&a.score));
 
-        println!("{} - {}:{} of {}", step, pop[0].s, pop[0].score, pop[0].s.len());
+        let percents = 100.0f32 * pop[0].score as f32 / pop[0].s.len() as f32;
+        println!("{number:>width$} - {} ({:.*}%)", pop[0].s, 2, percents, number = step + 1, width = 4);
         step += 1;
 
         if pop[0].s == expected { break; }
@@ -74,12 +73,12 @@ fn start_genetic(expected: String, population: Vec<member::Member>) -> usize {
 fn get_next_population(population: Vec<member::Member>, expected: &str) -> Vec<member::Member> {
     let mut pop = Vec::with_capacity(100);
 
-    //лучшие десять
+    //The top ten
     for i in 0..10 {
-        //оставляют по десять детей
+        //Leave ten children each
         let mut childs = 0;
         while childs < 10 {
-            //от лучших пятидесяти
+            //From the best fifty
             let mother_index = rand::thread_rng().gen_range(0, 50);
             let mother = &population[mother_index];
             pop.push(population[i].get_child(&mother, expected));
