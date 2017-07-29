@@ -4,15 +4,17 @@ use self::rand::Rng;
 
 pub mod member;
 
-pub const SYMBOLS: &'static [char] = &[
-    ' ', ',', '.', '!', '?', '-', '*', '/', '\\', '|', '=', ';', ':', '"', '\'', '[', ']', '{', '}', '@', '#', '%', '(', ')',
-    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-];
+pub const ALPHABET: &'static &str = &" ,.!?-*/\\|=;:\"'[]{}@#%()\
+    1234567890\
+    abcdefghijklmnopqrstuvwxyz\
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+    АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ\
+    абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 
-pub fn init_genetic(expected: String) {
-    println!("Expected string: {} with length {}", expected, expected.len());
+pub fn init_genetic(mut expected: String) {
+    expected = filter_expected_string(expected);
+
+    println!("Expected string: {} with length {}", expected, expected.chars().count());
 
     let population = get_population(&expected);
 
@@ -20,12 +22,28 @@ pub fn init_genetic(expected: String) {
     println!("The problem is solved in {} generations", steps);
 }
 
+fn filter_expected_string(expected: String) -> String {
+    let mut res = String::new();
+    let mut is_filtered = false;
+
+    for c in expected.chars() {
+        match ALPHABET.contains(c) {
+            true => res.push(c),
+            false => is_filtered = true
+        }
+    }
+
+    if is_filtered { println!("The expected string was filtered."); };
+
+    res
+}
+
 fn get_population(expected: &str) -> Vec<member::Member> {
     let mut m = 0;
     let mut population = Vec::with_capacity(100);
 
     loop {
-        let new_string = get_random_string(expected.len());
+        let new_string = get_random_string(expected.chars().count());
         population.push(member::Member::new(&new_string, expected));
 
         m += 1;
@@ -37,12 +55,12 @@ fn get_population(expected: &str) -> Vec<member::Member> {
 
 fn get_random_string(n: usize) -> String {
     let mut m = 0;
-    let mut res = String::with_capacity(n);
+    let mut res = String::with_capacity(n * 4);
 
     loop {
-        let r_index = rand::thread_rng().gen_range(0, SYMBOLS.len());
-        let new_char = SYMBOLS.get(r_index).unwrap();
-        res.push(*new_char);
+        let r_index = rand::thread_rng().gen_range(0, ALPHABET.chars().count());
+        let new_char = ALPHABET.chars().nth(r_index).unwrap();
+        res.push(new_char);
 
         m += 1;
         if m == n { break; }
@@ -58,7 +76,7 @@ fn start_genetic(expected: String, population: Vec<member::Member>) -> usize {
     loop {
         pop.sort_by(|a, b| b.score.cmp(&a.score));
 
-        let percents = 100.0f32 * pop[0].score as f32 / pop[0].s.len() as f32;
+        let percents = 100.0f32 * pop[0].score as f32 / pop[0].s.chars().count() as f32;
         println!("{number:>width$} - {} ({:.*}%)", pop[0].s, 2, percents, number = step + 1, width = 4);
         step += 1;
 
@@ -90,11 +108,16 @@ fn get_next_population(population: Vec<member::Member>, expected: &str) -> Vec<m
 }
 
 #[test]
-fn get_random_string_tests_eq_len0() {
-    assert_eq!(5, get_random_string(5).len())
+fn get_random_string_test_eq_len0() {
+    assert_eq!(5, get_random_string(5).chars().count())
 }
 
 #[test]
-fn get_random_string_tests_eq_len1() {
-    assert_eq!(15, get_random_string(15).len())
+fn get_random_string_test_eq_len1() {
+    assert_eq!(15, get_random_string(15).chars().count())
+}
+
+#[test]
+fn filter_expected_string_test() {
+    assert_eq!("hachiko", filter_expected_string("hachiko忠犬ハチ公".to_string()))
 }
