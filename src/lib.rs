@@ -2,52 +2,36 @@ extern crate rand;
 
 use self::rand::Rng;
 
-pub mod member;
+pub mod config;
+mod member;
 
-pub const ALPHABET: &'static &str = &" ,.!?-*/\\|=;:\"'[]{}@#%()\
-    1234567890\
-    abcdefghijklmnopqrstuvwxyz\
-    ABCDEFGHIJKLMNOPQRSTUVWXYZ\
-    АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ\
-    абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+pub const ALPHABET: &'static str = &" \
+,.!?-*/\\|=;:\"'[]{}@#%()\
+1234567890\
+abcdefghijklmnopqrstuvwxyz\
+ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ\
+абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 
-pub fn init_genetic(mut expected: String) {
-    expected = filter_expected_string(expected);
+pub fn init_genetic(config: config::Config) {
+    println!("Expected string: {} with length {}", config.expected, config.expected.chars().count());
 
-    println!("Expected string: {} with length {}", expected, expected.chars().count());
+    let population = get_population(&config);
 
-    let population = get_population(&expected);
-
-    let steps = start_genetic(expected, population);
+    let steps = start_genetic(&config, population);
     println!("The problem is solved in {} generations", steps);
 }
 
-fn filter_expected_string(expected: String) -> String {
-    let mut res = String::new();
-    let mut is_filtered = false;
-
-    for c in expected.chars() {
-        match ALPHABET.contains(c) {
-            true => res.push(c),
-            false => is_filtered = true
-        }
-    }
-
-    if is_filtered { println!("The expected string was filtered."); };
-
-    res
-}
-
-fn get_population(expected: &str) -> Vec<member::Member> {
+fn get_population(config: &config::Config) -> Vec<member::Member> {
     let mut m = 0;
-    let mut population = Vec::with_capacity(100);
+    let mut population = Vec::new();
 
     loop {
-        let new_string = get_random_string(expected.chars().count());
-        population.push(member::Member::new(&new_string, expected));
+        let new_string = get_random_string(config.expected.chars().count());
+        population.push(member::Member::new(&new_string, &config.expected));
 
         m += 1;
-        if m == 100 { break; }
+        if m == config.population { break; }
     }
 
     population
@@ -69,37 +53,44 @@ fn get_random_string(n: usize) -> String {
     res
 }
 
-fn start_genetic(expected: String, population: Vec<member::Member>) -> usize {
+fn start_genetic(config: &config::Config, population: Vec<member::Member>) -> usize {
     let mut step = 0;
     let mut pop = population.clone();
 
     loop {
         pop.sort_by(|a, b| b.score.cmp(&a.score));
 
-        let percents = 100.0f32 * pop[0].score as f32 / pop[0].s.chars().count() as f32;
-        println!("{number:>width$} - {} ({:.*}%)", pop[0].s, 2, percents, number = step + 1, width = 4);
+        if config.print_output {
+            let percents = 100.0f32 * pop[0].score as f32 / pop[0].s.chars().count() as f32;
+            println!("{number:>width$} - {} ({:.*}%)",
+                     pop[0].s,
+                     2, percents,
+                     number = step + 1,
+                     width = 4);
+        }
+
         step += 1;
 
-        if pop[0].s == expected { break; }
+        if pop[0].s == config.expected { break; }
 
-        pop = get_next_population(pop, &expected);
+        pop = get_next_population(config, pop);
     }
 
     step
 }
 
-fn get_next_population(population: Vec<member::Member>, expected: &str) -> Vec<member::Member> {
-    let mut pop = Vec::with_capacity(100);
+fn get_next_population(config: &config::Config, population: Vec<member::Member>) -> Vec<member::Member> {
+    let mut pop = Vec::new();
 
     //The top ten
-    for i in 0..10 {
+    for i in 0..config.alpha_population {
         //Leave ten children each
         let mut childs = 0;
         while childs < 10 {
             //From the best fifty
             let mother_index = rand::thread_rng().gen_range(0, 50);
             let mother = &population[mother_index];
-            pop.push(population[i].get_child(&mother, expected));
+            pop.push(population[i as usize].get_child(&mother, &config.expected));
             childs += 1;
         }
     }
@@ -115,9 +106,4 @@ fn get_random_string_test_eq_len0() {
 #[test]
 fn get_random_string_test_eq_len1() {
     assert_eq!(15, get_random_string(15).chars().count())
-}
-
-#[test]
-fn filter_expected_string_test() {
-    assert_eq!("hachiko", filter_expected_string("hachiko忠犬ハチ公".to_string()))
 }

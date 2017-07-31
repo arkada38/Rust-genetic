@@ -5,4 +5,4 @@ authors = ["Arkadiy <arkada38@outlook.com>"]
 
 [dependencies]
 
-rand="0.3.0"
+rand="*"
