@@ -20,4 +20,4 @@ Genetic algorithm for matching strings
 4. The expected string may contain english and russian characters.
 
 ## Example
-![Screen](genetic.gif)
+![Screen](img/genetic.gif)
