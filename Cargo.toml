@@ -6,3 +6,4 @@ authors = ["Arkadiy <arkada38@outlook.com>"]
 [dependencies]
 
 rand="*"
+clap="*"

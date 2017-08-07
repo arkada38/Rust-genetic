@@ -10,11 +10,13 @@ pub struct Member {
 }
 
 fn mutate_string(s: &str) -> String {
+    let mut rng = rand::thread_rng();
+
     //Index of a mutable character
-    let r_number = rand::thread_rng().gen_range(0, s.chars().count());
+    let r_number = rng.gen_range(0, s.chars().count());
 
     //New character index
-    let r_index = rand::thread_rng().gen_range(0, ALPHABET.chars().count());
+    let r_index = rng.gen_range(0, ALPHABET.chars().count());
     //New character
     let new_char = ALPHABET.chars().nth(r_index).unwrap();
 
@@ -28,13 +30,12 @@ fn mutate_string(s: &str) -> String {
 }
 
 fn get_score(s: &str, expected: &str) -> u32 {
-    let mut res = 0;
-
-    for (i, c) in s.chars().enumerate() {
-        if c == expected.chars().nth(i).unwrap() { res += 1; }
-    }
-
-    res
+    s.chars()
+        .enumerate()
+        .fold(0, |res, (i, c)| match c == expected.chars().nth(i).unwrap() {
+            true => res + 1,
+            false => res
+        })
 }
 
 impl Member {
@@ -49,11 +50,12 @@ impl Member {
 
     pub fn get_child(&self, partner: &Member, expected: &str) -> Member {
         let mut child_s = String::with_capacity(self.s.len());
+        let mut rng = rand::thread_rng();
 
         for i in 0..self.s.chars().count() {
-            match rand::thread_rng().gen_range(0, 2) {
-                0 => child_s.push(self.s.chars().nth(i).unwrap()),
-                _ => child_s.push(partner.s.chars().nth(i).unwrap())
+            match rng.gen::<bool>() {
+                true => child_s.push(self.s.chars().nth(i).unwrap()),
+                false => child_s.push(partner.s.chars().nth(i).unwrap())
             }
         }
 
@@ -79,6 +81,16 @@ fn mutate_string_test_eq_len1() {
 #[test]
 fn get_score_test() {
     assert_eq!(1, get_score("dare", "five"))
+}
+
+#[test]
+fn get_score_test_1() {
+    assert_eq!(2, get_score("dare", "wire"))
+}
+
+#[test]
+fn get_score_test_2() {
+    assert_eq!(4, get_score("dare", "dare"))
 }
 
 #[test]

@@ -48,6 +48,12 @@ impl ConfigBuilder {
     }
 
     pub fn finalize(&self) -> Config {
+        if self.alpha_population > self.beta_population {
+            panic!("Alfa population must be less or equal of beta population.")
+        }
+        if self.beta_population > self.population {
+            panic!("Beta population must be less or equal of population.")
+        }
         Config {
             expected: self.expected.to_string(),
             population: self.population,

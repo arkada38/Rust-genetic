@@ -15,6 +15,9 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ\
 
 pub fn init_genetic(config: config::Config) {
     println!("Expected string: {} with length {}", config.expected, config.expected.chars().count());
+    println!("p {} a {} b {} o {}",
+             config.population, config.alpha_population,
+             config.beta_population, config.print_output);
 
     let population = get_population(&config);
 
@@ -31,31 +34,28 @@ fn get_population(config: &config::Config) -> Vec<member::Member> {
         population.push(member::Member::new(&new_string, &config.expected));
 
         m += 1;
-        if m == config.population { break; }
+        if m == config.population { break population; }
     }
-
-    population
 }
 
 fn get_random_string(n: usize) -> String {
     let mut m = 0;
     let mut res = String::with_capacity(n * 4);
+    let mut rng = rand::thread_rng();
 
     loop {
-        let r_index = rand::thread_rng().gen_range(0, ALPHABET.chars().count());
+        let r_index = rng.gen_range(0, ALPHABET.chars().count());
         let new_char = ALPHABET.chars().nth(r_index).unwrap();
         res.push(new_char);
 
         m += 1;
-        if m == n { break; }
+        if m == n { break res; }
     }
-
-    res
 }
 
 fn start_genetic(config: &config::Config, population: Vec<member::Member>) -> usize {
-    let mut step = 0;
     let mut pop = population.clone();
+    let mut step = 0;
 
     loop {
         pop.sort_by(|a, b| b.score.cmp(&a.score));
@@ -71,16 +71,15 @@ fn start_genetic(config: &config::Config, population: Vec<member::Member>) -> us
 
         step += 1;
 
-        if pop[0].s == config.expected { break; }
+        if pop[0].s == config.expected { break step; }
 
         pop = get_next_population(config, pop);
     }
-
-    step
 }
 
 fn get_next_population(config: &config::Config, population: Vec<member::Member>) -> Vec<member::Member> {
     let mut pop = Vec::new();
+    let mut rng = rand::thread_rng();
 
     //The top ten
     for i in 0..config.alpha_population {
@@ -88,8 +87,8 @@ fn get_next_population(config: &config::Config, population: Vec<member::Member>)
         let mut childs = 0;
         while childs < 10 {
             //From the best fifty
-            let mother_index = rand::thread_rng().gen_range(0, 50);
-            let mother = &population[mother_index];
+            let mother_index = rng.gen_range(0, config.beta_population);
+            let mother = &population[mother_index as usize];
             pop.push(population[i as usize].get_child(&mother, &config.expected));
             childs += 1;
         }
