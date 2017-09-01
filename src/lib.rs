@@ -1,6 +1,7 @@
 extern crate rand;
 
 use self::rand::Rng;
+use member::Member;
 
 pub mod config;
 mod member;
@@ -14,7 +15,8 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ\
 абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
 
 pub fn init_genetic(config: config::Config) {
-    println!("Expected string: {} with length {}", config.expected, config.expected.chars().count());
+    println!("Expected string: {} with length {}",
+             config.expected, config.expected.chars().count());
     println!("p {} a {} b {} o {}",
              config.population, config.alpha_population,
              config.beta_population, config.print_output);
@@ -25,13 +27,13 @@ pub fn init_genetic(config: config::Config) {
     println!("The problem is solved in {} generations", steps);
 }
 
-fn get_population(config: &config::Config) -> Vec<member::Member> {
+fn get_population(config: &config::Config) -> Vec<Member> {
     let mut m = 0;
     let mut population = Vec::new();
 
     loop {
         let new_string = get_random_string(config.expected.chars().count());
-        population.push(member::Member::new(&new_string, &config.expected));
+        population.push(Member::new(&new_string, &config.expected));
 
         m += 1;
         if m == config.population { break population; }
@@ -53,7 +55,7 @@ fn get_random_string(n: usize) -> String {
     }
 }
 
-fn start_genetic(config: &config::Config, population: Vec<member::Member>) -> usize {
+fn start_genetic(config: &config::Config, population: Vec<Member>) -> usize {
     let mut pop = population.clone();
     let mut step = 0;
 
@@ -77,7 +79,7 @@ fn start_genetic(config: &config::Config, population: Vec<member::Member>) -> us
     }
 }
 
-fn get_next_population(config: &config::Config, population: Vec<member::Member>) -> Vec<member::Member> {
+fn get_next_population(config: &config::Config, population: Vec<Member>) -> Vec<Member> {
     let mut pop = Vec::new();
     let mut rng = rand::thread_rng();
 

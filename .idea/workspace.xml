@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d1681be-3c91-4f66-a8b7-66d3766acce0" name="Default" comment="" />
+    <list default="true" id="5d1681be-3c91-4f66-a8b7-66d3766acce0" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/config/mod.rs" afterPath="$PROJECT_DIR$/src/config.rs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/member/mod.rs" afterPath="$PROJECT_DIR$/src/member.rs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Cargo__genetic_.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Cargo__genetic_.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib.rs" afterPath="$PROJECT_DIR$/src/lib.rs" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="main.rs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.rs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="102">
+              <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -26,9 +33,10 @@
       <file leaf-file-name="lib.rs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1128">
-              <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+            <state relative-caret-position="372">
+              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
               <folding>
+                <element signature="n#!!block;n#init_genetic#0" expanded="false" />
                 <element signature="n#!!block;n#get_population#0" expanded="false" />
                 <element signature="n#!!block;n#get_random_string#0" expanded="false" />
                 <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -38,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mod.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/mod.rs">
+      <file leaf-file-name="config.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
+            <state relative-caret-position="462">
               <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
               <folding>
                 <element signature="n#!!block;n#Config#0" expanded="false" />
@@ -58,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mod.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+      <file leaf-file-name="member.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/member.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+            <state relative-caret-position="168">
+              <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
               <folding>
                 <element signature="n#!!block;n#Member#0" expanded="false" />
                 <element signature="n#!!block;n#get_score#0" expanded="false" />
@@ -70,6 +78,16 @@
                 <element signature="e#1176#1580#0" expanded="false" />
                 <element signature="n#!!block;n#get_new_member_test#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +104,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>pan</find>
+      <find>member::Member</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -102,15 +121,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Cargo.toml" />
         <option value="$PROJECT_DIR$/src/member/mod.rs" />
-        <option value="$PROJECT_DIR$/src/lib.rs" />
         <option value="$PROJECT_DIR$/src/config/mod.rs" />
         <option value="$PROJECT_DIR$/src/main.rs" />
+        <option value="$PROJECT_DIR$/src/lib.rs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1818" />
-    <option name="y" value="741" />
+    <option name="y" value="740" />
     <option name="width" value="1746" />
     <option name="height" value="1282" />
   </component>
@@ -133,7 +152,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -147,27 +165,21 @@
               <item name="Rust-genetic" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Rust-genetic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Rust-genetic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Rust-genetic" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Rust-genetic" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="member" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MAN\Documents\Git\Rust-genetic\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,135 +193,48 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cargo Command.Test">
-    <configuration name="Run genetic" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <parameters>
-        <option name="additionalArguments">
-          <list>
-            <option value="--bin" />
-            <option value="genetic" />
-            <option value="--" />
-            <option value="Hello song" />
-            <option value="-p" />
-            <option value="130" />
-          </list>
-        </option>
-        <option name="backtraceMode" value="2" />
-        <option name="channel" value="0" />
-        <option name="command" value="run" />
-        <option name="environmentVariables">
-          <map />
-        </option>
-        <option name="nocapture" value="true" />
-      </parameters>
-      <module name="genetic">
-        <option name="moduleName" value="genetic" />
-      </module>
+  <component name="RunManager" selected="Cargo Command.Run genetic">
+    <configuration name="Run genetic" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run --bin genetic -- &quot;Hello song&quot; -p 130" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <envs />
     </configuration>
-    <configuration name="Test filter_expected_string_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <parameters>
-        <option name="additionalArguments">
-          <list>
-            <option value="--package" />
-            <option value="genetic" />
-            <option value="--lib" />
-            <option value="filter_expected_string_test" />
-          </list>
-        </option>
-        <option name="backtraceMode" value="2" />
-        <option name="channel" value="0" />
-        <option name="command" value="test" />
-        <option name="environmentVariables">
-          <map />
-        </option>
-        <option name="nocapture" value="true" />
-      </parameters>
-      <module name="genetic">
-        <option name="moduleName" value="genetic" />
-      </module>
+    <configuration name="Test filter_expected_string_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package genetic --lib filter_expected_string_test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <envs />
     </configuration>
-    <configuration name="Test member::get_score_test_1" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <parameters>
-        <option name="additionalArguments">
-          <list>
-            <option value="--package" />
-            <option value="genetic" />
-            <option value="--lib" />
-            <option value="member::get_score_test_1" />
-          </list>
-        </option>
-        <option name="backtraceMode" value="2" />
-        <option name="channel" value="0" />
-        <option name="command" value="test" />
-        <option name="environmentVariables">
-          <map />
-        </option>
-        <option name="nocapture" value="true" />
-      </parameters>
-      <module name="genetic">
-        <option name="moduleName" value="genetic" />
-      </module>
+    <configuration name="Test member::get_score_test_1" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package genetic --lib member::get_score_test_1" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <envs />
     </configuration>
-    <configuration name="Test member::get_score_test_2" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <parameters>
-        <option name="additionalArguments">
-          <list>
-            <option value="--package" />
-            <option value="genetic" />
-            <option value="--lib" />
-            <option value="member::get_score_test_2" />
-          </list>
-        </option>
-        <option name="backtraceMode" value="2" />
-        <option name="channel" value="0" />
-        <option name="command" value="test" />
-        <option name="environmentVariables">
-          <map />
-        </option>
-        <option name="nocapture" value="true" />
-      </parameters>
-      <module name="genetic">
-        <option name="moduleName" value="genetic" />
-      </module>
+    <configuration name="Test member::get_score_test_2" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package genetic --lib member::get_score_test_2" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <envs />
     </configuration>
-    <configuration name="Test some_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
-      <parameters>
-        <option name="additionalArguments">
-          <list>
-            <option value="--package" />
-            <option value="genetic" />
-            <option value="--lib" />
-            <option value="some_test" />
-          </list>
-        </option>
-        <option name="backtraceMode" value="2" />
-        <option name="channel" value="0" />
-        <option name="command" value="test" />
-        <option name="environmentVariables">
-          <map />
-        </option>
-        <option name="nocapture" value="true" />
-      </parameters>
-      <module name="genetic">
-        <option name="moduleName" value="genetic" />
-      </module>
+    <configuration name="Test some_test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test --package genetic --lib some_test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <envs />
     </configuration>
-    <configuration name="Test" type="CargoCommandRunConfiguration" factoryName="Cargo Command" show_console_on_std_err="false" show_console_on_std_out="false">
-      <parameters>
-        <option name="additionalArguments">
-          <list />
-        </option>
-        <option name="backtraceMode" value="2" />
-        <option name="channel" value="0" />
-        <option name="command" value="test" />
-        <option name="environmentVariables">
-          <map />
-        </option>
-        <option name="nocapture" value="true" />
-      </parameters>
-      <module name="genetic">
-        <option name="moduleName" value="genetic" />
-      </module>
+    <configuration name="Test" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="test" />
+      <option name="nocapture" value="true" />
+      <option name="backtrace" value="FULL" />
+      <envs />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -427,28 +352,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="-12" width="3753" height="2184" extended-state="7" />
+    <frame x="-6" y="-6" width="1817" height="1093" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24087591" sideWeight="0.39635417" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24056366" sideWeight="0.60364586" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31666666" sideWeight="0.60364586" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14025208" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12848209" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -475,9 +403,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+        <state relative-caret-position="493">
+          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -486,7 +415,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/config.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
+          <folding>
+            <element signature="n#!!block;n#Config#0" expanded="false" />
+            <element signature="n#!!block;n#ConfigBuilder#0" expanded="false" />
+            <element signature="e#406#631#0" expanded="false" />
+            <element signature="e#705#763#0" expanded="false" />
+            <element signature="e#849#919#0" expanded="false" />
+            <element signature="e#1003#1071#0" expanded="false" />
+            <element signature="e#1150#1212#0" expanded="false" />
+            <element signature="n#!!block;n#filter_expected_string#0" expanded="false" />
+            <element signature="n#!!block;n#filter_expected_string_test#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!block;n#Member#0" expanded="false" />
+            <element signature="n#!!block;n#get_score#0" expanded="false" />
+            <element signature="e#949#1102#0" expanded="false" />
+            <element signature="e#1176#1580#0" expanded="false" />
+            <element signature="n#!!block;n#get_new_member_test#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="102" column="1" lean-forward="true" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
+            <element signature="n#!!block;n#get_population#0" expanded="false" />
+            <element signature="n#!!block;n#get_random_string#0" expanded="false" />
+            <element signature="n#!!block;n#start_genetic#0" expanded="false" />
+            <element signature="n#!!block;n#get_next_population#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="841">
           <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
@@ -504,7 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="20" />
@@ -531,6 +514,7 @@
         <state relative-caret-position="203">
           <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -539,7 +523,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="20" />
@@ -553,7 +537,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/config.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="841">
           <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
@@ -584,6 +568,7 @@
         <state relative-caret-position="29">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -592,7 +577,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
@@ -619,6 +604,7 @@
         <state relative-caret-position="667">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -627,7 +613,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
@@ -654,6 +640,7 @@
         <state relative-caret-position="667">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -662,7 +649,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
@@ -689,6 +676,7 @@
         <state relative-caret-position="812">
           <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -697,7 +685,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
@@ -731,6 +719,7 @@
         <state relative-caret-position="377">
           <caret line="13" column="2" lean-forward="true" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -739,7 +728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
@@ -753,17 +742,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src/libcollections/str.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="632" column="11" lean-forward="false" selection-start-line="632" selection-start-column="11" selection-end-line="632" selection-end-column="11" />
-          <folding>
-            <element signature="e#19617#19618#0" expanded="false" />
-            <element signature="e#19661#19662#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src/libcollections/str.rs" />
     <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src/libcore/macros.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3362">
@@ -778,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/getopts-0.2.14/src/lib.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -792,41 +764,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src/libcollections/vec.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
-          <caret line="965" column="11" lean-forward="false" selection-start-line="965" selection-start-column="11" selection-end-line="965" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-pc-windows-msvc/lib/rustlib/src/rust/src/libcollections/vec.rs" />
     <entry file="file://$PROJECT_DIR$/Cargo.toml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/member/mod.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <element signature="n#!!block;n#Member#0" expanded="false" />
-            <element signature="n#!!block;n#get_score#0" expanded="false" />
-            <element signature="e#949#1102#0" expanded="false" />
-            <element signature="e#1176#1580#0" expanded="false" />
-            <element signature="n#!!block;n#get_new_member_test#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1128">
-          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+        <state relative-caret-position="372">
+          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding>
+            <element signature="n#!!block;n#init_genetic#0" expanded="false" />
             <element signature="n#!!block;n#get_population#0" expanded="false" />
             <element signature="n#!!block;n#get_random_string#0" expanded="false" />
             <element signature="n#!!block;n#start_genetic#0" expanded="false" />
@@ -835,9 +786,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/mod.rs">
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" lean-forward="true" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
           <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
           <folding>
             <element signature="n#!!block;n#Config#0" expanded="false" />
@@ -853,10 +812,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.rs">
+    <entry file="file://$PROJECT_DIR$/src/member.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state relative-caret-position="168">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="n#!!block;n#Member#0" expanded="false" />
+            <element signature="n#!!block;n#get_score#0" expanded="false" />
+            <element signature="e#949#1102#0" expanded="false" />
+            <element signature="e#1176#1580#0" expanded="false" />
+            <element signature="n#!!block;n#get_new_member_test#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding />
         </state>
       </provider>
