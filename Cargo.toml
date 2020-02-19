@@ -2,8 +2,8 @@
 name = "genetic"
 version = "0.1.0"
 authors = ["Arkadiy <arkada38@outlook.com>"]
+edition = "2018"
 
 [dependencies]
-
-rand="*"
-clap="*"
+rand = "0.7.3"
+clap = "2.33.0"
