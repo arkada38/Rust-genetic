@@ -83,10 +83,15 @@ fn filter_expected_string(expected: String) -> String {
   res
 }
 
-#[test]
-fn filter_expected_string_test() {
-  assert_eq!(
-    "hachiko",
-    filter_expected_string("hachiko忠犬ハチ公".to_string())
-  )
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn filter_expected_string_test() {
+    assert_eq!(
+      "hachiko",
+      filter_expected_string("hachiko忠犬ハチ公".to_string())
+    )
+  }
 }

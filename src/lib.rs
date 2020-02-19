@@ -107,12 +107,17 @@ fn get_next_population(config: &config::Config, population: Vec<Member>) -> Vec<
   pop
 }
 
-#[test]
-fn get_random_string_test_eq_len0() {
-  assert_eq!(5, get_random_string(5).chars().count())
-}
+#[cfg(test)]
+mod tests {
+  use super::*;
 
-#[test]
-fn get_random_string_test_eq_len1() {
-  assert_eq!(15, get_random_string(15).chars().count())
+  #[test]
+  fn get_random_string_test_eq_len0() {
+    assert_eq!(5, get_random_string(5).chars().count())
+  }
+
+  #[test]
+  fn get_random_string_test_eq_len1() {
+    assert_eq!(15, get_random_string(15).chars().count())
+  }
 }

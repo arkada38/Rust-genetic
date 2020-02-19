@@ -61,39 +61,44 @@ impl Member {
   }
 }
 
-#[test]
-fn mutate_string_test_not_same() {
-  assert_ne!("Hello", mutate_string("Hello"));
-}
+#[cfg(test)]
+mod tests {
+  use super::*;
 
-#[test]
-fn mutate_string_test_eq_len0() {
-  assert_eq!(5, mutate_string("Hello").chars().count())
-}
+  #[test]
+  fn mutate_string_test_not_same() {
+    assert_ne!("Hello", mutate_string("Hello"));
+  }
 
-#[test]
-fn mutate_string_test_eq_len1() {
-  assert_eq!(15, mutate_string("hello five four").chars().count())
-}
+  #[test]
+  fn mutate_string_test_eq_len0() {
+    assert_eq!(5, mutate_string("Hello").chars().count())
+  }
 
-#[test]
-fn get_score_test() {
-  assert_eq!(1, get_score("dare", "five"))
-}
+  #[test]
+  fn mutate_string_test_eq_len1() {
+    assert_eq!(15, mutate_string("hello five four").chars().count())
+  }
 
-#[test]
-fn get_score_test_1() {
-  assert_eq!(2, get_score("dare", "wire"))
-}
+  #[test]
+  fn get_score_test() {
+    assert_eq!(1, get_score("dare", "five"))
+  }
 
-#[test]
-fn get_score_test_2() {
-  assert_eq!(4, get_score("dare", "dare"))
-}
+  #[test]
+  fn get_score_test_1() {
+    assert_eq!(2, get_score("dare", "wire"))
+  }
 
-#[test]
-fn get_new_member_test() {
-  let member = Member::new("world", "world");
+  #[test]
+  fn get_score_test_2() {
+    assert_eq!(4, get_score("dare", "dare"))
+  }
 
-  assert_eq!(member.s.chars().count(), 5)
+  #[test]
+  fn get_new_member_test() {
+    let member = Member::new("world", "world");
+
+    assert_eq!(member.s.chars().count(), 5)
+  }
 }
